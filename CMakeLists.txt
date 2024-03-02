@@ -4,8 +4,8 @@ project(Backpack)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(Backpack main.cpp
-        Item.c++
-        Item.h++
-        backpack.c++
+        item.c++
+        item.h++
         backpack.h++
-        backpack.h++)
+        backpack.h++
+        backpack.cpp)
