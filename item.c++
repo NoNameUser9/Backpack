@@ -20,3 +20,10 @@ Item::Item(std::string content, unsigned int weight, unsigned int cost)
     this->cost = cost;
     this->weight = weight;
 }
+Item::Item(std::string content, unsigned int weight, unsigned int cost, unsigned int quantity)
+{
+    this->content = std::move(content);
+    this->cost = cost;
+    this->weight = weight;
+    this->quantity = quantity;
+}

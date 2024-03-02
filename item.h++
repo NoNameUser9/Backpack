@@ -12,8 +12,10 @@ struct Item
 	Item();
     Item(unsigned int weight, unsigned int cost);
     Item(std::string content, unsigned int weight, unsigned int cost);
+    Item(std::string content, unsigned int weight, unsigned int cost, unsigned quantity);
 
 	std::string content;
-	unsigned int weight;
-	unsigned int cost;
+	unsigned int weight = 0;
+	unsigned int cost = 0;
+	unsigned int quantity = 0;
 };

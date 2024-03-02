@@ -29,17 +29,17 @@ Backpack::size() const
 /// \brief knapsack problem with costs and weights and unlimited number of elements
 /// \return max costs by set capacity
 unsigned
-Backpack::sort_unlim()
+Backpack::sort_with_costs()
 {
     unsigned n = items_.size();
-    std::vector<std::vector<unsigned >> dp(n + 1, std::vector<unsigned >(capacity_ + 1, 0));
+    std::vector<std::vector<unsigned>> dp(n + 1, std::vector<unsigned>(capacity_ + 1, 0));
 
     for (unsigned i = 1; i <= n; i++)
-        for (unsigned w = 1; w <= capacity_; ++w)
-            if (items_[i - 1].weight <= w)
-                dp[i][w] = std::max(dp[i - 1][w], dp[i - 1][w - items_[i - 1].weight] + items_[i - 1].cost);
+        for (unsigned j = 1; j <= capacity_; ++j)
+            if (items_[i - 1].weight <= j)
+                dp[i][j] = std::max(dp[i - 1][j], dp[i - 1][j - items_[i - 1].weight] + items_[i - 1].cost);
             else
-                dp[i][w] = dp[i - 1][w];
+                dp[i][j] = dp[i - 1][j];
 
     return dp[n][capacity_];
 
@@ -53,26 +53,38 @@ Backpack::sort_unlim()
 }
 
 /// \brief don't work now
-/// \param k - max number of items
 /// \return weight
 /// \note Doesn't work correctly right now
 unsigned
-Backpack::sort_lim(unsigned k)
+Backpack::sort_lim()
 {
     unsigned n = items_.size();
-    std::vector<std::vector<unsigned >> dp(n + 1, std::vector<unsigned >(capacity_ + 1, 0));
+    std::vector<std::vector<unsigned>> dp(n + 1, std::vector<unsigned>(capacity_ + 1, 0));
 
-    for (unsigned i = 1; i <= n; i++) {
-        for (unsigned w = 1; w <= capacity_; w++) {
-            if (items_[i - 1].weight <= w) {
-                dp[i][w] = std::max(dp[i - 1][w], dp[i - 1][w - items_[i - 1].weight] + items_[i - 1].cost);
-            } else {
-                dp[i][w] = dp[i - 1][w];
+    for (unsigned i = 1; i <= n; ++i)
+        for (unsigned j = 1; j <= capacity_; ++j)
+            for (unsigned k = 0; k <= items_[i - 1].quantity; ++k)
+                if (k * items_[i - 1].weight <= j)
+                    dp[i][j] = std::max(dp[i][j], dp[i - 1][j - k * items_[i - 1].weight] + k * items_[i - 1].cost);
+
+    return dp[n][capacity_];
+}
+
+unsigned
+Backpack::sort_unlim()
+{
+    unsigned n = items_.size();
+    std::vector<unsigned> dp(capacity_ + 1, 0);
+
+    for (int w = 1; w <= capacity_; w++) {
+        for (int i = 0; i < n; i++) {
+            if (items_[i].weight <= w) {
+                dp[w] = std::max(dp[w], dp[w - items_[i].weight] + items_[i].cost);
             }
         }
     }
 
-    return dp[n][capacity_];
+    return dp[capacity_];
 }
 
 /// \remark prints all elements of this class
@@ -89,5 +101,5 @@ Backpack::print()
 void
 Backpack::add(Item *item)
 {
-    items_.emplace_back(item->content, item->weight, item->cost);
+    items_.emplace_back(item->content, item->weight, item->cost, item->quantity);
 }

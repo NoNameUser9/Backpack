@@ -14,8 +14,10 @@ public:
 	explicit Backpack(unsigned size);
 	void resize(unsigned size);
     [[maybe_unused]] [[nodiscard]] unsigned size() const;
+    unsigned sort_with_costs();
+    unsigned int
+    sort_lim();
     unsigned sort_unlim();
-    unsigned sort_lim(unsigned k);
     [[maybe_unused]] void print();
 	void add(Item* item);
 
