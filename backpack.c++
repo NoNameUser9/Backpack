@@ -9,13 +9,13 @@ Backpack::Backpack()
     capacity_ = 0;
 }
 
-Backpack::Backpack(unsigned size)
+Backpack::Backpack(const unsigned int& size)
 {
     capacity_ = size;
 }
 
 void
-Backpack::resize(unsigned size)
+Backpack::resize(const unsigned int& size)
 {
     capacity_ = size;
 }

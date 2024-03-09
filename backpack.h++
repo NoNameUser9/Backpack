@@ -11,10 +11,10 @@ class Backpack
 {
 public:
     Backpack();
-    explicit Backpack(unsigned int size);
+    explicit Backpack(const unsigned int& size);
 
     void
-    resize(unsigned size);
+    resize(const unsigned int& size);
 
     [[maybe_unused]] [[nodiscard]] unsigned int
     size() const;

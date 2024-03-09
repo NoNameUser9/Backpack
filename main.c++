@@ -1,12 +1,20 @@
 #include <iostream>
 #include "item.h++"
 #include "backpack.h++"
+#if WIN32
+#include <windows.h>
+#endif
 
 int
 main()
 {
     Backpack bp(3);
-    setlocale(LC_ALL, "rus");
+#if WIN32
+    // –£—Å—Ç–∞–Ω–æ–≤–∫–∞ –∫–æ–¥–∏—Ä–æ–≤–∫–∏ –¥–ª—è –∫–æ–Ω—Å–æ–ª–∏ Windows
+    SetConsoleOutputCP(CP_UTF8);
+#elif
+    setlocale(LC_ALL, ".UTF-8");
+#endif
 
     std::vector<Item> items = {{"PiSOS", 2, 12, 1}, {1, 10}, {3, 20},
         {2, 15}, {5, 150000},
@@ -20,9 +28,9 @@ main()
     bp.resize(4);
     bp.print();
 
-    std::cout << "Ã‡ÍÒËÏ‡Î¸Ì‡ˇ ˆÂÌÌÓÒÚ¸ ÔÂ‰ÏÂÚÓ‚ ‚ ˛ÍÁ‡ÍÂ(with_costs): " << bp.sort_with_costs() << std::endl;
-    std::cout << "Ã‡ÍÒËÏ‡Î¸Ì‡ˇ ˆÂÌÌÓÒÚ¸ ÔÂ‰ÏÂÚÓ‚ ‚ ˛ÍÁ‡ÍÂ(lim)(bounded knapsack): " << bp.sort_lim() << std::endl;
-    std::cout << "Ã‡ÍÒËÏ‡Î¸Ì‡ˇ ˆÂÌÌÓÒÚ¸ ÔÂ‰ÏÂÚÓ‚ ‚ ˛ÍÁ‡ÍÂ(unlim)(unbounded knapsack): " << bp.sort_unlim()
+    std::cout << "–ú–∞–∫—Å–∏–º–∞–ª—å–Ω–∞—è —Ü–µ–Ω–Ω–æ—Å—Ç—å –ø—Ä–µ–¥–º–µ—Ç–æ–≤ –≤ —Ä—é–∫–∑–∞–∫–µ(with_costs): " << bp.sort_with_costs() << std::endl;
+    std::cout << "–ú–∞–∫—Å–∏–º–∞–ª—å–Ω–∞—è —Ü–µ–Ω–Ω–æ—Å—Ç—å –ø—Ä–µ–¥–º–µ—Ç–æ–≤ –≤ —Ä—é–∫–∑–∞–∫–µ(lim)(bounded knapsack): " << bp.sort_lim() << std::endl;
+    std::cout << "–ú–∞–∫—Å–∏–º–∞–ª—å–Ω–∞—è —Ü–µ–Ω–Ω–æ—Å—Ç—å –ø—Ä–µ–¥–º–µ—Ç–æ–≤ –≤ —Ä—é–∫–∑–∞–∫–µ(unlim)(unbounded knapsack): " << bp.sort_unlim()
               << std::endl;
 
     return 0;

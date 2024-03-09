@@ -10,9 +10,9 @@
 struct Item
 {
     Item();
-    Item(unsigned int weight, unsigned int cost);
-    Item(const std::string& content, unsigned int weight, unsigned int cost);
-    Item(const std::string& content, unsigned int weight, unsigned int cost, unsigned quantity);
+    Item(const unsigned int& weight, const unsigned int& cost);
+    Item(const std::string& content, const unsigned int& weight, const unsigned int& cost);
+    Item(const std::string& content, const unsigned int& weight, const unsigned int& cost, const unsigned int& quantity);
 
     Item&
     operator=(const Item& r) = default;

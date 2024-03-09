@@ -8,20 +8,20 @@ Item::Item()
     weight = 0, cost = 0;
 }
 
-Item::Item(unsigned int weight, unsigned int cost)
+Item::Item(const unsigned int& weight, const unsigned int& cost)
 {
     this->cost = cost;
     this->weight = weight;
 }
 
-Item::Item(const std::string& content, unsigned int weight, unsigned int cost)
+Item::Item(const std::string& content, const unsigned int& weight, const unsigned int& cost)
 {
     this->content = content;
     this->cost = cost;
     this->weight = weight;
 }
 
-Item::Item(const std::string& content, unsigned int weight, unsigned int cost, unsigned int quantity)
+Item::Item(const std::string& content, const unsigned int& weight, const unsigned int& cost, const unsigned int& quantity)
 {
     this->content = content;
     this->cost = cost;
