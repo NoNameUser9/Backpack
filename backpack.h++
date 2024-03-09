@@ -3,7 +3,6 @@
 //
 
 #pragma once
-#include <ntdef.h>
 #include <iostream>
 #include <vector>
 #include "item.h++"
