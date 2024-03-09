@@ -20,7 +20,7 @@ Backpack::resize(unsigned size)
     capacity_ = size;
 }
 
-unsigned
+unsigned int
 Backpack::size() const
 {
     return capacity_;
@@ -28,7 +28,7 @@ Backpack::size() const
 
 /// \brief knapsack problem with costs and weights and unlimited number of elements
 /// \return max costs by set capacity
-unsigned
+unsigned int
 Backpack::sort_with_costs()
 {
     unsigned n = items_.size();
@@ -42,20 +42,12 @@ Backpack::sort_with_costs()
                 dp[i][j] = dp[i - 1][j];
 
     return dp[n][capacity_];
-
-//        for(unsigned i = 1; i < nn - 1; ++i){
-//            for(unsigned j = 0; j < w; ++j){
-//                dp[i][j] = dp[i - 1][j];
-//                if(items_[i]->weight <= j)
-//                    dp[i][j] = std::max(dp[i][j], dp[i][j - items_[i]->weight] + items_[i]->cost);
-//            }
-//        }
 }
 
 /// \brief don't work now
 /// \return weight
 /// \note Doesn't work correctly right now
-unsigned
+unsigned int
 Backpack::sort_lim()
 {
     unsigned n = items_.size();
@@ -70,15 +62,18 @@ Backpack::sort_lim()
     return dp[n][capacity_];
 }
 
-unsigned
+unsigned int
 Backpack::sort_unlim()
 {
     unsigned n = items_.size();
     std::vector<unsigned> dp(capacity_ + 1, 0);
 
-    for (int w = 1; w <= capacity_; w++) {
-        for (int i = 0; i < n; i++) {
-            if (items_[i].weight <= w) {
+    for (int w = 1; w <= capacity_; w++)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            if (items_[i].weight <= w)
+            {
                 dp[w] = std::max(dp[w], dp[w - items_[i].weight] + items_[i].cost);
             }
         }
@@ -93,13 +88,13 @@ Backpack::print()
 {
     unsigned t_size = 0;
 
-    while(t_size < items_.size())
+    while (t_size < items_.size())
         std::cout << "Content: " << items_[t_size].content << "\nweight: " << items_[t_size].weight << "\ncost: "
                   << items_[t_size++].cost << "\n\n";
 }
 
 void
-Backpack::add(Item *item)
+Backpack::add(const Item& item)
 {
-    items_.emplace_back(item->content, item->weight, item->cost, item->quantity);
+    items_.emplace_back(item);
 }

@@ -9,13 +9,16 @@
 
 struct Item
 {
-	Item();
+    Item();
     Item(unsigned int weight, unsigned int cost);
-    Item(std::string content, unsigned int weight, unsigned int cost);
-    Item(std::string content, unsigned int weight, unsigned int cost, unsigned quantity);
+    Item(const std::string& content, unsigned int weight, unsigned int cost);
+    Item(const std::string& content, unsigned int weight, unsigned int cost, unsigned quantity);
 
-	std::string content;
-	unsigned int weight = 0;
-	unsigned int cost = 0;
-	unsigned int quantity = 0;
+    Item&
+    operator=(const Item& r) = default;
+
+    std::string content;
+    unsigned int weight = 0;
+    unsigned int cost = 0;
+    unsigned int quantity = 0;
 };
