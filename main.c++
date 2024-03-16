@@ -1,12 +1,12 @@
 #include <iostream>
-#include "item.h++"
-#include "backpack.h++"
+#include "include/item.h++"
+#include "include/backpack.h++"
 #if WIN32
 #include <windows.h>
 #elif __linux__
 #include <unistd.h>
 #endif
-#define VER "0.0.2"
+#define VER "0.1.0"
 
 using namespace std;
 int
@@ -29,6 +29,8 @@ main()
 
     items.clear();
 //    bp.print();
+
+
     while (true)
     {
 #if WIN32
@@ -41,11 +43,19 @@ main()
                 "\n\n1.print"
                 "\n2.all methods"
                 "\n3.change items"
-                "\n4.backpack size[" << bp.size() << "]";
+                "\n4.backpack size[" << bp.size() << "]" <<
+             "\n6.exit"
+             "";
+
         unsigned short mc = 0;
         std::cin >> mc;
 #if WIN32
         std::system("cls");
+//        HANDLE hStdout;
+//
+//        hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+//
+//        cls(hStdout);
 #elif __linux__
         system("clear");
 #endif
@@ -73,19 +83,22 @@ main()
             {
                 unsigned int sw2 = 0;
 //                cin >> sw2;
-                while (sw2 != 6){
+                while (sw2 != 6)
+                {
 #if WIN32
                     std::system("cls");
 #elif __linux__
                     system("clear");
 #endif
                     cout << "1.add new"
-                            "\nchange one"
-                            "\nremove";
+                            "\n2.change one"
+                            "\n3.remove"
+                            "\n6.exit";
                     cin >> sw2;
                     switch (sw2)
                     {
-                        case 1:{
+                        case 1:
+                        {
 
                             break;
                         }
@@ -111,4 +124,5 @@ main()
         }
     }
 
+    return 0;
 }

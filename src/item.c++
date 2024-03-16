@@ -2,7 +2,7 @@
 // Created by User on 19.02.2024.
 //
 
-#include "item.h++"
+#include "../include/item.h++"
 Item::Item()
 {
     weight = 0, cost = 0;
