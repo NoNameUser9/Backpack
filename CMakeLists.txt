@@ -8,13 +8,20 @@ include(GNUInstallDirs)
 set(PACKAGE_NAME matplotlib_cpp)
 set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/${PACKAGE_NAME}/cmake)
 
+set(Python3_ROOT_DIR "./venv")
 
+add_custom_command(
+        OUTPUT venv.stamp
+        DEPENDS venv requirements.txt
+        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/requirements.txt requirements.txt
+        COMMAND ./venv/Scripts/pip install -r requirements.txt --upgrade
+)
 # Library target
 add_library(matplotlib_cpp INTERFACE
         src/example.c++)
 target_include_directories(matplotlib_cpp
         INTERFACE
-        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/examples>
+        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
 )
 target_compile_features(matplotlib_cpp INTERFACE
