@@ -40,6 +40,68 @@ include CMakeFiles\rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:\Users\User\CLionProjects\Backpack\cmake-build-debug\
+
+#############################################
+# Utility command for matplotlib_cpp
+
+build matplotlib_cpp: phony
+
+# =============================================================================
+# Object build statements for EXECUTABLE target example
+
+
+#############################################
+# Order-only phony target for example
+
+build cmake_object_order_depends_target_example: phony || matplotlib_cpp
+
+build CMakeFiles\example.dir\src\example.c++.obj: CXX_COMPILER__example_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\src\example.c++ || cmake_object_order_depends_target_example
+  DEFINES = -DWITHOUT_NUMPY
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -std:c++latest -MDd
+  INCLUDES = -IC:\Users\User\CLionProjects\Backpack\include -external:IC:\Users\User\AppData\Local\Programs\Python\Python312\include -external:W0
+  OBJECT_DIR = CMakeFiles\example.dir
+  OBJECT_FILE_DIR = CMakeFiles\example.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\example.dir\
+  TARGET_PDB = bin\example.pdb
+
+build CMakeFiles\example.dir\src\item.c++.obj: CXX_COMPILER__example_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\src\item.c++ || cmake_object_order_depends_target_example
+  DEFINES = -DWITHOUT_NUMPY
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -std:c++latest -MDd
+  INCLUDES = -IC:\Users\User\CLionProjects\Backpack\include -external:IC:\Users\User\AppData\Local\Programs\Python\Python312\include -external:W0
+  OBJECT_DIR = CMakeFiles\example.dir
+  OBJECT_FILE_DIR = CMakeFiles\example.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\example.dir\
+  TARGET_PDB = bin\example.pdb
+
+build CMakeFiles\example.dir\src\backpack.c++.obj: CXX_COMPILER__example_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\src\backpack.c++ || cmake_object_order_depends_target_example
+  DEFINES = -DWITHOUT_NUMPY
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -std:c++latest -MDd
+  INCLUDES = -IC:\Users\User\CLionProjects\Backpack\include -external:IC:\Users\User\AppData\Local\Programs\Python\Python312\include -external:W0
+  OBJECT_DIR = CMakeFiles\example.dir
+  OBJECT_FILE_DIR = CMakeFiles\example.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\example.dir\
+  TARGET_PDB = bin\example.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target example
+
+
+#############################################
+# Link the executable bin\example.exe
+
+build bin\example.exe: CXX_EXECUTABLE_LINKER__example_Debug CMakeFiles\example.dir\src\example.c++.obj CMakeFiles\example.dir\src\item.c++.obj CMakeFiles\example.dir\src\backpack.c++.obj | C$:\Users\User\AppData\Local\Programs\Python\Python312\libs\python312.lib C$:\Users\User\AppData\Local\Programs\Python\Python312\libs\python312.lib || matplotlib_cpp
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -MDd
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = C:\Users\User\AppData\Local\Programs\Python\Python312\libs\python312.lib  C:\Users\User\AppData\Local\Programs\Python\Python312\libs\python312.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\example.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\example.dir\
+  TARGET_FILE = bin\example.exe
+  TARGET_IMPLIB = example.lib
+  TARGET_PDB = bin\example.pdb
+
 # =============================================================================
 # Object build statements for EXECUTABLE target Backpack
 
@@ -49,24 +111,24 @@ cmake_ninja_workdir = C$:\Users\User\CLionProjects\Backpack\cmake-build-debug\
 
 build cmake_object_order_depends_target_Backpack: phony || CMakeFiles\Backpack.dir
 
-build CMakeFiles\Backpack.dir\main.cpp.obj: CXX_COMPILER__Backpack_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\main.cpp || cmake_object_order_depends_target_Backpack
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi
+build CMakeFiles\Backpack.dir\main.c++.obj: CXX_COMPILER__Backpack_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\main.c++ || cmake_object_order_depends_target_Backpack
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -std:c++latest -MDd
   OBJECT_DIR = CMakeFiles\Backpack.dir
   OBJECT_FILE_DIR = CMakeFiles\Backpack.dir
   TARGET_COMPILE_PDB = CMakeFiles\Backpack.dir\
   TARGET_PDB = Backpack.pdb
 
-build CMakeFiles\Backpack.dir\Item.c++.obj: CXX_COMPILER__Backpack_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\Item.c++ || cmake_object_order_depends_target_Backpack
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi
+build CMakeFiles\Backpack.dir\src\item.c++.obj: CXX_COMPILER__Backpack_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\src\item.c++ || cmake_object_order_depends_target_Backpack
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -std:c++latest -MDd
   OBJECT_DIR = CMakeFiles\Backpack.dir
-  OBJECT_FILE_DIR = CMakeFiles\Backpack.dir
+  OBJECT_FILE_DIR = CMakeFiles\Backpack.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\Backpack.dir\
   TARGET_PDB = Backpack.pdb
 
-build CMakeFiles\Backpack.dir\backpack.c++.obj: CXX_COMPILER__Backpack_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\backpack.c++ || cmake_object_order_depends_target_Backpack
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi
+build CMakeFiles\Backpack.dir\src\backpack.c++.obj: CXX_COMPILER__Backpack_unscanned_Debug C$:\Users\User\CLionProjects\Backpack\src\backpack.c++ || cmake_object_order_depends_target_Backpack
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -std:c++latest -MDd
   OBJECT_DIR = CMakeFiles\Backpack.dir
-  OBJECT_FILE_DIR = CMakeFiles\Backpack.dir
+  OBJECT_FILE_DIR = CMakeFiles\Backpack.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\Backpack.dir\
   TARGET_PDB = Backpack.pdb
 
@@ -78,8 +140,8 @@ build CMakeFiles\Backpack.dir\backpack.c++.obj: CXX_COMPILER__Backpack_unscanned
 #############################################
 # Link the executable Backpack.exe
 
-build Backpack.exe: CXX_EXECUTABLE_LINKER__Backpack_Debug CMakeFiles\Backpack.dir\main.cpp.obj CMakeFiles\Backpack.dir\Item.c++.obj CMakeFiles\Backpack.dir\backpack.c++.obj
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
+build Backpack.exe: CXX_EXECUTABLE_LINKER__Backpack_Debug CMakeFiles\Backpack.dir\main.c++.obj CMakeFiles\Backpack.dir\src\item.c++.obj CMakeFiles\Backpack.dir\src\backpack.c++.obj
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc -finput-charset=UTF-8 /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\Backpack.dir
@@ -113,10 +175,44 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles\install.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\User\CLionProjects\Backpack\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles\install\local.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\User\CLionProjects\Backpack\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install\local: phony CMakeFiles\install\local.util
+
 # =============================================================================
 # Target aliases.
 
 build Backpack: phony Backpack.exe
+
+build example: phony bin\example.exe
+
+build example.exe: phony bin\example.exe
 
 # =============================================================================
 # Folder targets.
@@ -126,7 +222,7 @@ build Backpack: phony Backpack.exe
 #############################################
 # Folder: C:/Users/User/CLionProjects/Backpack/cmake-build-debug
 
-build all: phony Backpack.exe
+build all: phony matplotlib_cpp bin\example.exe Backpack.exe
 
 # =============================================================================
 # Built-in targets
@@ -135,14 +231,14 @@ build all: phony Backpack.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake C$:\Users\User\CLionProjects\Backpack\CMakeLists.txt CMakeCache.txt CMakeFiles\3.26.4\CMakeCCompiler.cmake CMakeFiles\3.26.4\CMakeCXXCompiler.cmake CMakeFiles\3.26.4\CMakeRCCompiler.cmake CMakeFiles\3.26.4\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPython3.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPython\Support.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\GNUInstallDirs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\WriteBasicConfigVersionFile.cmake C$:\Users\User\CLionProjects\Backpack\CMakeLists.txt C$:\Users\User\CLionProjects\Backpack\cmake\matplotlib_cppConfig.cmake.in CMakeCache.txt CMakeFiles\3.26.4\CMakeCXXCompiler.cmake CMakeFiles\3.26.4\CMakeRCCompiler.cmake CMakeFiles\3.26.4\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake C$:\Users\User\CLionProjects\Backpack\CMakeLists.txt CMakeCache.txt CMakeFiles\3.26.4\CMakeCCompiler.cmake CMakeFiles\3.26.4\CMakeCXXCompiler.cmake CMakeFiles\3.26.4\CMakeRCCompiler.cmake CMakeFiles\3.26.4\CMakeSystem.cmake: phony
+build C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPython3.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\FindPython\Support.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\GNUInstallDirs.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\JetBrains\CLion$ 2023.2.2\bin\cmake\win\x64\share\cmake-3.26\Modules\WriteBasicConfigVersionFile.cmake C$:\Users\User\CLionProjects\Backpack\CMakeLists.txt C$:\Users\User\CLionProjects\Backpack\cmake\matplotlib_cppConfig.cmake.in CMakeCache.txt CMakeFiles\3.26.4\CMakeCXXCompiler.cmake CMakeFiles\3.26.4\CMakeRCCompiler.cmake CMakeFiles\3.26.4\CMakeSystem.cmake: phony
 
 
 #############################################

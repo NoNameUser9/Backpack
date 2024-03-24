@@ -1,7 +1,3 @@
-//
-// Created by User on 19.02.2024.
-//
-
 #include "../include/backpack.h++"
 
 Backpack::Backpack()
@@ -54,10 +50,22 @@ Backpack::sort_lim()
     std::vector<std::vector<unsigned>> dp(n + 1, std::vector<unsigned>(capacity_ + 1, 0));
 
     for (unsigned i = 1; i <= n; ++i)
+    {
+
         for (unsigned j = 1; j <= capacity_; ++j)
+        {
+
             for (unsigned k = 0; k <= items_[i - 1].quantity; ++k)
+            {
+
                 if (k * items_[i - 1].weight <= j)
-                    dp[i][j] = std::max(dp[i][j], dp[i - 1][j - k * items_[i - 1].weight] + k * items_[i - 1].cost);
+                    dp[i][j] = std::max(
+                            dp[i][j], 
+                            dp[i - 1][j - k * items_[i - 1].weight] 
+                            + k * items_[i - 1].cost);
+            }
+        }
+    }
 
     return dp[n][capacity_];
 }

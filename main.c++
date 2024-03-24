@@ -16,7 +16,7 @@ main()
 #if WIN32
     // Установка кодировки для консоли Windows
     SetConsoleOutputCP(CP_UTF8);
-#elif
+#elif __linux__
     setlocale(LC_ALL, ".UTF-8");
 #endif
 
