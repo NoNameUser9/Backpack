@@ -106,3 +106,8 @@ add_executable(Backpack
         include/is_dominant.h++
         include/angle.h++
         include/distance.h++)
+
+add_executable(Johnsons_algorithm
+        src/Johnson.c++
+        include/Johnson.h++
+)

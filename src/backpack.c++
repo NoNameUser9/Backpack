@@ -40,9 +40,8 @@ Backpack::sort_with_costs()
     return dp[n][capacity_];
 }
 
-/// \brief don't work now
+/// \brief work correctly now
 /// \return weight
-/// \note Doesn't work correctly right now
 unsigned int
 Backpack::sort_lim()
 {
